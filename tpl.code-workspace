@@ -5,6 +5,6 @@
 		}
 	],
 	"settings": {
-		"markdown-pdf.styles": ["URL"],
+		"markdown-pdf.styles": ["https://md.maruchan.dev/blue.css"],
 	}
 }
