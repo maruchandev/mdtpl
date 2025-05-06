@@ -162,6 +162,7 @@
             from {
                 opacity: 0;
             }
+
             to {
                 opacity: 1;
             }
@@ -172,6 +173,7 @@
                 opacity: 0;
                 transform: translateY(20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -208,59 +210,59 @@
             <p class="subtitle">テーマを選択してください</p>
         </header>
 
-        <a href="https://md.maruchan.dev/tpl.code-workspace">ワークスペースファイル</a>
 
         <div id="link-list">
-            
-            <a href="https://md.maruchan.dev/bl.css">あおいろてーま</a>
-            <a href="https://md.maruchan.dev/dark.css">くろいろてーま</a>
-            <a href="https://md.maruchan.dev/dark.css">あかいろてーま</a>
-            <!-- 好きにaタグを追加 -->
+            <!-- リンクはJavaScriptによって動的に生成されます -->
         </div>
 
         <footer>
             <p>© 2025 maruchan.dev</p>
         </footer>
     </div>
-
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const linkList = document.getElementById("link-list");
-            const links = linkList.querySelectorAll("a");
+        // JSONファイルをfetchで読み込む
+        fetch('./list.json') // list.jsonのパス
+            .then(response => response.json()) // JSONとしてパース
+            .then(data => {
+                // JSONデータを取得して表示
+                const linkListDiv = document.getElementById('link-list');
+                let htmlContent = '';
 
-            linkList.innerHTML = ""; // 一旦中身をクリア
+                // JSONデータをループしてリンクカードを作成
+                let index = 0;
+                for (const key in data) {
+                    if (data.hasOwnProperty(key)) {
+                        const wrapper = document.createElement("div");
+                        wrapper.className = "link-card";
+                        wrapper.style.animationDelay = `${index * 0.1}s`;
 
-            links.forEach((link, index) => {
-                const wrapper = document.createElement("div");
-                wrapper.className = "link-card";
-                wrapper.style.animationDelay = `${index * 0.1}s`;
+                        const link = document.createElement("a");
+                        link.href = data[key].url;
+                        link.textContent = data[key].name;
 
-                const clonedLink = link.cloneNode(true);
-                
-                // テーマ名を取得して表示
-                const themeName = clonedLink.textContent;
-                const themeUrl = clonedLink.href;
-                
-                const button = document.createElement("button");
-                button.textContent = "コピー";
-                button.className = "copy-btn";
-                button.addEventListener("click", () => {
-                    navigator.clipboard.writeText(themeUrl).then(() => {
-                        button.textContent = "コピー済み";
-                        button.classList.add("copied");
-                        setTimeout(() => {
-                            button.textContent = "コピー";
-                            button.classList.remove("copied");
-                        }, 1500);
-                    });
-                });
+                        const button = document.createElement("button");
+                        button.textContent = "コピー";
+                        button.className = "copy-btn";
+                        button.addEventListener("click", () => {
+                            navigator.clipboard.writeText(data[key].url).then(() => {
+                                button.textContent = "コピー済み";
+                                button.classList.add("copied");
+                                setTimeout(() => {
+                                    button.textContent = "コピー";
+                                    button.classList.remove("copied");
+                                }, 1500);
+                            });
+                        });
 
-                wrapper.appendChild(clonedLink);
-                wrapper.appendChild(button);
-
-                linkList.appendChild(wrapper);
-            });
-        });
+                        wrapper.appendChild(link);
+                        wrapper.appendChild(button);
+                        linkListDiv.appendChild(wrapper);
+                        
+                        index++;
+                    }
+                }
+            })
+            .catch(error => console.error('Error loading JSON:', error)); // エラーハンドリング
     </script>
 </body>
 
