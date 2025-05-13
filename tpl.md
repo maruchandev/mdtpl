@@ -1,4 +1,4 @@
-#タイトル 1回
+# タイトル ■■回
 日付:
 ## SubSection
 ### SubSubSection
