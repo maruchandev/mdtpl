@@ -28,12 +28,14 @@
 
         header {
             margin-bottom: 3.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid #0078d4;
         }
 
         h1 {
             font-size: 2rem;
             font-weight: 600;
-            color: #1a1a1a;
+            color: #0078d4;
             margin-bottom: 0.5rem;
             letter-spacing: -0.01em;
         }
@@ -54,16 +56,18 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: #fafafa;
-            border: 1px solid #e5e5e5;
-            border-radius: 8px;
+            background: #f8f9fa;
+            border: 1px solid #e1e4e8;
+            border-left: 3px solid #0078d4;
+            border-radius: 6px;
             padding: 1rem 1.25rem;
             transition: all 0.2s ease;
         }
 
         .link-card:hover {
-            background: #f5f5f5;
-            border-color: #d4d4d4;
+            background: #f3f4f6;
+            border-left-color: #005a9e;
+            box-shadow: 0 2px 8px rgba(0, 120, 212, 0.1);
         }
 
         .link-card a {
@@ -72,18 +76,19 @@
             font-weight: 500;
             font-size: 0.95rem;
             flex-grow: 1;
+            transition: color 0.2s ease;
         }
 
         .link-card a:hover {
-            color: #404040;
+            color: #0078d4;
         }
 
         .copy-btn {
-            background: #1a1a1a;
+            background: #0078d4;
             color: white;
             border: none;
             padding: 0.5rem 1rem;
-            border-radius: 6px;
+            border-radius: 4px;
             cursor: pointer;
             font-size: 0.875rem;
             font-weight: 500;
@@ -92,7 +97,7 @@
         }
 
         .copy-btn:hover {
-            background: #404040;
+            background: #005a9e;
         }
 
         .copy-btn:active {
@@ -100,14 +105,16 @@
         }
 
         .copy-btn.copied {
-            background: #059669;
+            background: #16a34a;
         }
 
         footer {
             margin-top: 4rem;
+            padding-top: 2rem;
             text-align: center;
             font-size: 0.875rem;
             color: #999;
+            border-top: 1px solid #e1e4e8;
         }
 
         @media (max-width: 640px) {
