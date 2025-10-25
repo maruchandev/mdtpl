@@ -1,10 +1,42 @@
 {
-    "1":{
-        "name":"あおいろてーま",
-        "url":"https://md.maruchan.dev/blue.css"
+    "1": {
+        "name": "あおいろてーま",
+        "url": "https://md.maruchan.dev/blue.css"
     },
-    "2":{
-        "name":"あかいろてーま",
-        "url":"https://md.maruchan.dev/red.css"
+    "2": {
+        "name": "みどりいろてーま",
+        "url": "https://md.maruchan.dev/green.css"
+    },
+    "3": {
+        "name": "あかいろてーま",
+        "url": "https://md.maruchan.dev/red.css"
+    },
+    "4": {
+        "name": "むらさきいろてーま",
+        "url": "https://md.maruchan.dev/purple.css"
+    },
+    "5": {
+        "name": "おれんじいろてーま",
+        "url": "https://md.maruchan.dev/orange.css"
+    },
+    "6": {
+        "name": "てぃーるてーま",
+        "url": "https://md.maruchan.dev/teal.css"
+    },
+    "7": {
+        "name": "ぴんくてーま",
+        "url": "https://md.maruchan.dev/pink.css"
+    },
+    "8": {
+        "name": "あいいろてーま",
+        "url": "https://md.maruchan.dev/indigo.css"
+    },
+    "9": {
+        "name": "こはくいろてーま",
+        "url": "https://md.maruchan.dev/amber.css"
+    },
+    "10": {
+        "name": "しあんてーま",
+        "url": "https://md.maruchan.dev/cyan.css"
     }
 }
